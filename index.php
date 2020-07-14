@@ -6,7 +6,26 @@
   // require('./model/helpers.php');
   //
   // global $db;
-  // $message = "";
+  $message = "";
+
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $username = filter_input(INPUT_POST, 'username');
+    $password = filter_input(INPUT_POST, 'password');
+
+    //Hashing the password
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+    echo $password_hashed;
+
+    //Getting the password from the database
+    $query = "SELECT * FROM users
+      WHERE userName = :username";
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);
+    $statement->execute();
+    $user = $statement->fetch();
+  }
 
 ?>
 

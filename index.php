@@ -1,11 +1,13 @@
 <?php
 
+  // Starting the session
   session_start();
-  //Pulling in the databases
-  // require('./model/database.php');
-  // require('./model/helpers.php');
-  //
-  // global $db;
+
+  // Pulling in the databases
+  require('./model/database.php');
+  require('./model/helpers.php');
+
+  global $db;
   $message = "";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -13,18 +15,32 @@
     $username = filter_input(INPUT_POST, 'username');
     $password = filter_input(INPUT_POST, 'password');
 
-    //Hashing the password
+    // Hashing the password
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
-    echo $password_hashed;
-
-    //Getting the password from the database
+    // Getting the password from the database
     $query = "SELECT * FROM users
-      WHERE userName = :username";
+      WHERE username = :username";
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
     $statement->execute();
     $user = $statement->fetch();
+    // Setting the user_table variable to store the password which will be used in
+    // the password_verify function
+    $user_table_password = $user['password'];
+    $valid_password = password_verify($password, $user_table_password);
+    if ($valid_password) {
+      $user = get_one_user($username, $user_table_password);
+      $_SESSION["username"] = $username;
+      $_SESSION["user_id"] = $user['user_id'];
+      // echo $user['username'];
+      // echo $user['user_id'];
+      header("location: controller/index.php");
+      exit();
+    }else {
+      $message = '<label>Username or Password is Wrong</label>';
+    }
+
   }
 
 ?>

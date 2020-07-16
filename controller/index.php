@@ -1,12 +1,12 @@
 <?php
-  echo 'HI';
+
   // Starting the session
-  // session_start();
-  // $name = $_SESSION["username"];
-  // $id = $_SESSION["user_id"];
-  // if (!empty($name)){
-  //   $allowed = True;
-  // }
+  session_start();
+  $name = $_SESSION["username"];
+  $id = $_SESSION["user_id"];
+  if (!empty($name)){
+    $allowed = True;
+  }
 
   //Pulling in the databases
   require('../model/database.php');
@@ -21,26 +21,18 @@
       }
   }
 
-  switch ($action) {
-      //This case will bring the user to the blog page
-      case 'home':
-        include('home.php');
-        break;
-      // case 'createTopicPage':
-      //   include('create.php');
-      //   break;
+  if ($allowed) {
+    switch ($action) {
+        //This case will bring the user to the blog page
+        case 'home':
+          include('home.php');
+          break;
+        // case 'createTopicPage':
+        //   include('create.php');
+        //   break;
+    }
+  }else {
+    include('notAllowed.php');
   }
 
-  // if ($allowed){
-  //   switch ($action) {
-  //     //This case will bring the user to the blog page
-  //     case 'home':
-  //       include('home.php');
-  //       break;
-  //     // case 'createTopicPage':
-  //     //   include('create.php');
-  //     //   break;
-  // }else {
-  //   include('notAllowed.php');
-  // }
 ?>

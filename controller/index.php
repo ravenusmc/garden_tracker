@@ -27,9 +27,6 @@
         case 'home':
           include('home.php');
           break;
-        // case 'createTopicPage':
-        //   include('create.php');
-        //   break;
     }
   }else {
     include('notAllowed.php');

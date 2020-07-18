@@ -23,10 +23,10 @@
 
   if ($allowed) {
     switch ($action) {
-        //This case will bring the user to the blog page
-        case 'home':
-          include('home.php');
-          break;
+      //This case will bring the user to the blog page
+      case 'home':
+        include('home.php');
+        break;
     }
   }else {
     include('notAllowed.php');

@@ -1,0 +1,19 @@
+/* The CSS in this file will be for the login page */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/garden.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+form {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+}

@@ -1,0 +1,18 @@
+/* The CSS in this file will be used throughout the project. */
+
+/*****************
+CSS For Buttons
+*****************/
+
+.button_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #42E762;
+  border-color: #42E762;
+}

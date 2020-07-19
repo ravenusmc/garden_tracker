@@ -15,5 +15,9 @@ main {
 form {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
-  border: 2px solid black;
+  border-radius: 12px;
+}
+
+input {
+  margin: 5px;
 }

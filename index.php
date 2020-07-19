@@ -71,7 +71,10 @@
       <input name='password' type='password' class='form-input' placeholder="Password" aria-label="Password">
     </div>
 
-    <button class='form-button' type='submit'>Submit</button>
+    <div class='button_div'>
+      <button class='form-button' type='submit'>Submit</button>
+    </div>
+
   </form>
 
 </main>

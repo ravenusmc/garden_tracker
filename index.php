@@ -7,7 +7,10 @@
   require('./model/database.php');
   require('./model/helpers.php');
 
+  // Global variable for the database
   global $db;
+  
+  // Message variable for wrong password/username
   $message = "";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -46,9 +49,9 @@
 ?>
 
 <?php include 'view/header.php'; ?>
+<!-- CSS for the header -->
 <link rel="stylesheet" type="text/css" href="./assets/css/generic.css">
 <!-- CSS for the header -->
-<link rel="stylesheet" type="text/css" href="./assets/css/header.css">
 <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 
 <main>

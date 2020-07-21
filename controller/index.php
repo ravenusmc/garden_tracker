@@ -23,7 +23,7 @@
 
   if ($allowed) {
     switch ($action) {
-      //This case will bring the user to the blog page
+      //This case will bring the user to the homepgae 
       case 'home':
         include('home.php');
         break;

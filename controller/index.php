@@ -23,7 +23,7 @@
 
   if ($allowed) {
     switch ($action) {
-      //This case will bring the user to the homepgae 
+      //This case will bring the user to the homepage once the user is logged in
       case 'home':
         include('home.php');
         break;

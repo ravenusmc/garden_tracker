@@ -19,8 +19,11 @@
 
 <main>
 
+  <h1>Garden Record</h1>
+
   <table>
     <tr>
+      <td>
     </tr>
   </table>
 

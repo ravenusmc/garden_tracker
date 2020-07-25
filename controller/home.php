@@ -1,6 +1,8 @@
 <?php
-  
+
+  // Starting the session
   session_start();
+  // Setting session varibles
   $name = $_SESSION["username"];
   $id = $_SESSION["user_id"];
   if (!empty($name)){

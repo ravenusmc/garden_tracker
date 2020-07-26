@@ -5,6 +5,7 @@
   // Setting session varibles
   $name = $_SESSION["username"];
   $id = $_SESSION["user_id"];
+  // This will decide if the page can be shown or not
   if (!empty($name)){
     $navbar = True;
   }

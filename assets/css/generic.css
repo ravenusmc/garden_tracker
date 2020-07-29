@@ -4,6 +4,10 @@
 CSS For Buttons
 *****************/
 
+.center {
+  text-align: center;
+}
+
 .button_div {
   display: flex;
   flex-direction: column;

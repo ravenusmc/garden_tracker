@@ -22,12 +22,54 @@
 
 <main>
 
-  <h1>Garden Record</h1>
+  <h1 class='center'>Garden Record</h1>
 
-  <table>
-    <tr>
-      <td>
-    </tr>
-  </table>
+  <section id='tableArea'>
+
+    <div>
+      <h2 class='center'>Garden Table</h2>
+      <table>
+        <tr>
+          <th>Bed</th>
+          <th>PlantID</th>
+          <th>Location</th>
+          <th>Time Period</th>
+          <th>Plant Date</th>
+          <th>First Pick Date</th>
+          <th>Last Pick Date</th>
+        </tr>
+        <?php foreach ($gardens as $garden): ?>
+          <tr>
+            <td><?php echo $garden->getbed(); ?></td>
+            <td><?php echo $garden->getplantID(); ?></td>
+            <td><?php echo $garden->getlocation(); ?></td>
+            <td><?php echo $garden->gettimePeriod(); ?></td>
+            <td><?php echo $garden->getplantDate(); ?></td>
+            <td><?php echo $garden->getfirstPickDate(); ?></td>
+            <td><?php echo $garden->getlastPickDate(); ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
+
+    <div>
+      <h2>Plant Table</h2>
+      <table>
+        <tr>
+          <th>Plant ID</th>
+          <th>Plant Name</th>
+        </tr>
+        <?php foreach ($gardens as $garden): ?>
+          <tr>
+            <td><?php echo $garden->getbed(); ?></td>
+            <td><?php echo $garden->getplantID(); ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
+
+  </section>
+
+
 
 </main>

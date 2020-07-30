@@ -22,7 +22,11 @@
 
 <main>
 
-  <h1 class='center'>Garden Record</h1>
+  <header>
+    <div class='headerDiv'>
+      <h1 class='center'>Garden Records</h1>
+    </div>
+  </header>
 
   <section id='tableArea'>
 
@@ -59,10 +63,10 @@
           <th>Plant ID</th>
           <th>Plant Name</th>
         </tr>
-        <?php foreach ($gardens as $garden): ?>
+        <?php foreach ($plants as $plant): ?>
           <tr>
-            <td><?php echo $garden->getbed(); ?></td>
-            <td><?php echo $garden->getplantID(); ?></td>
+            <td><?php echo $plant->getplantID(); ?></td>
+            <td><?php echo $plant->getplantName(); ?></td>
           </tr>
         <?php endforeach; ?>
       </table>

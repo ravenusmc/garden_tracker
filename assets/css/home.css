@@ -1,10 +1,32 @@
 /***********
 This file has CSS for the home page
 ***********/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/homeImage.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.headerDiv {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
 #tableArea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
+  justify-items: center;
 }
 
 table {
@@ -16,8 +38,9 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  text-align: center;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #008640;
 }

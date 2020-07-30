@@ -11,6 +11,7 @@
   //Pulling in the databases
   require('../model/database.php');
   require('../model/Gardens.php');
+  require('../model/Plants.php');
   require('../model/Record.php');
 
   //Setting a default action
@@ -30,6 +31,7 @@
         $GardensObject = new GrowingDB();
         // Searching in the database for the garden records
         $gardens = $GardensObject->searchForRecords();
+        $plants = $GardensObject->searchForPlants();
         include('home.php');
         break;
     }

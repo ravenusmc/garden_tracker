@@ -8,8 +8,8 @@
   require('./model/helpers.php');
 
   // Global variable for the database
-  global $db;
-  
+  $db = Database::getDB();
+
   // Message variable for wrong password/username
   $message = "";
 
@@ -32,6 +32,7 @@
     // the password_verify function
     $user_table_password = $user['password'];
     $valid_password = password_verify($password, $user_table_password);
+
     if ($valid_password) {
       $user = get_one_user($username, $user_table_password);
       $_SESSION["username"] = $username;

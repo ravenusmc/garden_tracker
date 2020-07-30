@@ -28,6 +28,10 @@
     </div>
   </header>
 
+  <section>
+    <h2 class='center'>Control Area</h2>
+  </section>
+
   <section id='tableArea'>
 
     <div>
@@ -74,6 +78,7 @@
 
   </section>
 
-
-
 </main>
+
+<!-- Footer Area -->
+<?php include '../view/footer.php'; ?>

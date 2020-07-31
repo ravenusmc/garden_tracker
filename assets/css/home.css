@@ -1,6 +1,8 @@
 /***********
 This file has CSS for the home page
 ***********/
+
+/* CSS For the Header */
 header {
   display: flex;
   flex-direction: column;
@@ -22,6 +24,12 @@ header {
   border-radius: 12px;
 }
 
+/* CSS For the control area */
+#controlArea {
+  margin-top: 50px;
+}
+
+/* CSS For the tables */
 #tableArea {
   display: grid;
   grid-template-columns: 1fr 1fr;

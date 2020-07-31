@@ -1,9 +1,9 @@
 /* The CSS in this file will be for the footer page. */
 
-/* .fa-linkedin-square, .fa-twitter-square, .fa-pencil, .fa-github-square {
+.fa-linkedin, .fa-twitter-square, .fa-pen-square, .fa-github-square {
   color: white;
   margin: 5px;
-} */
+}
 
 footer {
   display: flex;

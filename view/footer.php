@@ -6,12 +6,13 @@
 <footer>
   <div class='footer_fix'>
     <h2 class='footerTitle font'>&copy; <?php echo date("Y"); ?> Double Sun Productions<br></h2>
-  <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+    <!-- <i class="fas fa-ad fa-3x"></i>
+    <i class="fab fa-linkedin fa-3x"></i> -->
     <div>
-      <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://twitter.com/mcuddy7"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-      <a href="https://medium.com/@mcuddy7"><i class="fa fa-pencil fa-3x" aria-hidden="true"></i></a>
-      <a href="https://github.com/ravenusmc"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fab fa-linkedin fa-3x"></i></a>
+      <a href="https://twitter.com/mcuddy7"><i class="fab fa-twitter-square fa-3x"></i></a>
+      <a href="https://medium.com/@mcuddy7"><i class="fas fa-pen-square fa-3x"></i></a>
+      <a href="https://github.com/ravenusmc"><i class="fab fa-github-square fa-3x"></i></a>
     </div>
   </div>
 </footer>

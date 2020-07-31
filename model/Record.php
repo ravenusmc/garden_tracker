@@ -6,7 +6,7 @@
 
       $db = Database::getDB();
 
-      $query = 'SELECT * from Garden_Beds
+      $query = 'SELECT * FROM Garden_Beds
                 ORDER BY bedID desc';
       $statement = $db->prepare($query);
       $statement->execute();
@@ -38,7 +38,7 @@
 
       $db = Database::getDB();
 
-      $query = 'SELECT * from Plants
+      $query = 'SELECT * FROM Plants
                 ORDER BY plantID desc';
       $statement = $db->prepare($query);
       $statement->execute();
@@ -58,6 +58,20 @@
       return $plants;
 
     } // End searchForPlants Method
+
+    // This method will delete a record
+    public static function deleteRecord($bedID) {
+
+      $db = Database::getDB();
+
+      $query = 'DELETE FROM Garden_Beds
+                WHERE bedID = :bedID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':bedID', $bedID);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End deleteRecord Method
 
   } // End Class
 

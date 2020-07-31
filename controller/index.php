@@ -34,6 +34,15 @@
         $plants = $GardensObject->searchForPlants();
         include('home.php');
         break;
+      case 'delete_record':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        //Getting the record id when the user pushes the delete key.
+        $bedID = filter_input(INPUT_POST, 'bedID', FILTER_VALIDATE_INT);
+        #Calling the delete record method to delete the record.
+        $GardensObject->deleteRecord($bedID);
+        header('Location: .?action=home');
+        break;
     }
   }else {
     include('notAllowed.php');

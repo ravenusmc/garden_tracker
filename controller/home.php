@@ -74,11 +74,19 @@
         <tr>
           <th>Plant ID</th>
           <th>Plant Name</th>
+          <th>Delete Plant</th>
         </tr>
         <?php foreach ($plants as $plant): ?>
           <tr>
             <td><?php echo $plant->getplantID(); ?></td>
             <td><?php echo $plant->getplantName(); ?></td>
+            <td>
+              <form action="index.php" method="post">
+                <input type="hidden" name="action" value="delete_plant">
+                <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
+                <input class='input_style' type="submit" value="Delete">
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
       </table>

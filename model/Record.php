@@ -39,7 +39,7 @@
       $db = Database::getDB();
 
       $query = 'SELECT * FROM Plants
-                ORDER BY plantID desc';
+                ORDER BY plantID asc';
       $statement = $db->prepare($query);
       $statement->execute();
       $rows = $statement->fetchAll();
@@ -72,6 +72,20 @@
       $statement->closeCursor();
 
     } // End deleteRecord Method
+
+    // This method will delete a plant
+    public static function deletePlant($plantID) {
+
+      $db = Database::getDB();
+
+      $query = 'DELETE FROM Plants
+                WHERE plantID = :plantID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':plantID', $plantID);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End deletePlant Method
 
   } // End Class
 

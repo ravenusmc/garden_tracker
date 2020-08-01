@@ -34,6 +34,9 @@
         $plants = $GardensObject->searchForPlants();
         include('home.php');
         break;
+      case 'CreateRecord':
+        include('CreateRecord.php');
+        break;
       case 'delete_record':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();

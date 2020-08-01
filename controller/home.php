@@ -30,6 +30,14 @@
 
   <section id='controlArea'>
     <h2 class='center'>Control Area</h2>
+    <form action="index.php" method="post">
+      <input type="hidden" name="action" value="CreateRecord" />
+      <button>Create Record</button>
+    </form>
+    <form action="index.php" method="post">
+      <input type="hidden" name="action" value="AddPlant" />
+      <button>Add Plant</button>
+    </form>
   </section>
 
   <section id='tableArea'>

@@ -35,7 +35,7 @@
       <button>Create Record</button>
     </form>
     <form action="index.php" method="post">
-      <input type="hidden" name="action" value="AddPlant" />
+      <input type="hidden" name="action" value="createPlantPage" />
       <button>Add Plant</button>
     </form>
   </section>

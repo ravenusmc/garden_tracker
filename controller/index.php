@@ -37,6 +37,18 @@
       case 'CreateRecord':
         include('CreateRecord.php');
         break;
+      case 'createPlantPage':
+        include('CreatePlant.php');
+        break;
+      case 'createPlant':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        // Getting the user input
+        $plant = filter_input(INPUT_POST, 'plant');
+        #Calling the delete record method to delete the record.
+        $GardensObject->addPlant($plant);
+        include('CreatePlant.php');
+        break;
       case 'delete_record':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();

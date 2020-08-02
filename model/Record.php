@@ -2,6 +2,7 @@
 
   class GrowingDB {
 
+    // This method will get all the records
     public static function searchForRecords() {
 
       $db = Database::getDB();
@@ -58,6 +59,22 @@
       return $plants;
 
     } // End searchForPlants Method
+
+    // This method will Add a plant to the plant table
+    public static function addPlant($plant) {
+
+      $db = Database::getDB();
+
+      $query = 'INSERT INTO plants
+                (plantName)
+                VALUES
+                (:plantName)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':plantName', $plant);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End addPlant Method
 
     // This method will delete a record
     public static function deleteRecord($bedID) {

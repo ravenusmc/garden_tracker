@@ -60,6 +60,28 @@
 
     } // End searchForPlants Method
 
+    // This method will get one plant from the DB based on the plant id.
+    public static function getOnePlant($plant_id) {
+
+      $db = Database::getDB();
+
+      $query = 'SELECT * FROM Plants
+                WHERE plantID = :plantID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':plantID', $plant_id);
+      $statement->execute();
+      $row = $statement->fetch();
+      $statement->closeCursor();
+
+      $plant = new Plants();
+
+      $plant->setplantID($row['plantID']);
+      $plant->setplantName($row['plantName']);
+
+      return $plant;
+
+    } // End getOnePlant Method
+
     // This method will Add a plant to the plant table
     public static function addPlant($plant) {
 

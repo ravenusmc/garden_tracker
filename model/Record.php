@@ -98,6 +98,23 @@
 
     } // End addPlant Method
 
+    // This method will update a plant record from the DB based on the plant id.
+    public static function update_plant($plantID, $plantName) {
+
+      $db = Database::getDB();
+
+      $query = 'UPDATE Plants
+      SET plantName = :plantName
+      WHERE plantID = :plantID';
+
+      $statement = $db->prepare($query);
+      $statement->bindValue(':plantID', $plantID);
+      $statement->bindValue(':plantName', $plantName);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End update_plant Method
+
     // This method will delete a record
     public static function deleteRecord($bedID) {
 

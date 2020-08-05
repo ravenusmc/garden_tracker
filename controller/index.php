@@ -79,6 +79,7 @@
         // include('test.php');
         header('Location: .?action=home');
         break;
+      // This action will delete a record
       case 'delete_record':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();
@@ -88,6 +89,7 @@
         $GardensObject->deleteRecord($bedID);
         header('Location: .?action=home');
         break;
+      // This action will delete a plant 
       case 'delete_plant':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();

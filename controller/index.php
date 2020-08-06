@@ -51,6 +51,32 @@
         $GardensObject->addPlant($plant);
         include('CreatePlant.php');
         break;
+      // This action will take the user to the update record form page.
+      case 'updateRecordFormPage':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        // Getting the id of the specific record
+        $bedID = filter_input(INPUT_POST, 'bedID');
+        $garden = $GardensObject->getOneRecord($bedID);
+        include('updateRecordForm.php');
+        break;
+        // This action will actually execute the code to update the selected record
+      case 'updateRecordFormSubmit':
+          // Creating the object to deal with the database.
+          $GardensObject = new GrowingDB();
+          // Getting the data from what the user entered
+          // $plantID = filter_input(INPUT_POST, 'plantID');
+          // $plantName = filter_input(INPUT_POST, 'plantName');
+          // Use if statements to set the values if they're empty.
+          // if (empty($plantName)) {
+          //   $plant = $GardensObject->getOnePlant($plantID);
+          //   $plantName = $plant->getplantName();
+          // }
+          //Making he updates to the database.
+          // $GardensObject->update_plant($plantID, $plantName);
+          // include('test.php');
+          header('Location: .?action=home');
+          break;
       // This action will take the user to the update plant form page.
       case 'updatePlantFormPage':
         // Creating the object to deal with the database.
@@ -60,13 +86,13 @@
         $plant = $GardensObject->getOnePlant($plant_id);
         include('UpdatePlantForm.php');
         break;
+      // This action will actually execute the code to update the plant
       case 'updatePlantFormSubmit':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();
         // Getting the data from what the user entered
         $plantID = filter_input(INPUT_POST, 'plantID');
         $plantName = filter_input(INPUT_POST, 'plantName');
-
         // Use if statements to set the value of plantName if it's empty. I know
         // I don't really need to do this for plants but have this here because
         // I will need to do this for gardens.
@@ -89,7 +115,7 @@
         $GardensObject->deleteRecord($bedID);
         header('Location: .?action=home');
         break;
-      // This action will delete a plant 
+      // This action will delete a plant
       case 'delete_plant':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();

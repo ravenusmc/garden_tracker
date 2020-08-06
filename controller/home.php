@@ -53,6 +53,7 @@
           <th>Plant Date</th>
           <th>First Pick Date</th>
           <th>Last Pick Date</th>
+          <th>Update Record</th>
           <th>Delete Record</th>
         </tr>
         <?php foreach ($gardens as $garden): ?>
@@ -64,6 +65,13 @@
             <td><?php echo $garden->getplantDate(); ?></td>
             <td><?php echo $garden->getfirstPickDate(); ?></td>
             <td><?php echo $garden->getlastPickDate(); ?></td>
+            <td>
+              <form action="index.php" method="post">
+                <input type="hidden" name="action" value="updateRecordFormPage">
+                <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
+                <input class='input_style' type="submit" value="Update">
+              </form>
+            </td>
             <td>
               <form action="index.php" method="post">
                 <input type="hidden" name="action" value="delete_record">

@@ -34,6 +34,33 @@
 
     } // End searchForRecords Method
 
+    // This method will get one plant from the DB based on the plant id.
+    public static function getOneRecord($bedID) {
+
+      $db = Database::getDB();
+
+      $query = 'SELECT * FROM Garden_Beds
+                WHERE bedID = :bedID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':bedID', $bedID);
+      $statement->execute();
+      $row = $statement->fetch();
+      $statement->closeCursor();
+
+      $garden = new Gardens();
+
+      $garden->setbed($row['bed']);
+      $garden->setplantID($row['plantID']);
+      $garden->setlocation($row['location']);
+      $garden->settimePeriod($row['timePeriod']);
+      $garden->setplantDate($row['plantDate']);
+      $garden->setfirstPickDate($row['firstPickDate']);
+      $garden->setlastPickDate($row['lastPickDate']);
+
+      return $garden;
+
+    } // End getOnePlant Method
+
     // This method will get the plants from the data base.
     public static function searchForPlants() {
 

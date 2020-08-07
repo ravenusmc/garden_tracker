@@ -65,17 +65,24 @@
           // Creating the object to deal with the database.
           $GardensObject = new GrowingDB();
           // Getting the data from what the user entered
-          // $plantID = filter_input(INPUT_POST, 'plantID');
-          // $plantName = filter_input(INPUT_POST, 'plantName');
+          $bedID = filter_input(INPUT_POST, 'bedID');
+          $Bed = filter_input(INPUT_POST, 'Bed');
+          $plantID = filter_input(INPUT_POST, 'plantID');
+          $location = filter_input(INPUT_POST, 'location');
+          $timePeriod = filter_input(INPUT_POST, 'timePeriod');
+          $plantDate = filter_input(INPUT_POST, 'plantDate');
+          $firstPickDate = filter_input(INPUT_POST, 'firstPickDate');
+          $lastPickDate = filter_input(INPUT_POST, 'lastPickDate');
+
           // Use if statements to set the values if they're empty.
-          // if (empty($plantName)) {
-          //   $plant = $GardensObject->getOnePlant($plantID);
-          //   $plantName = $plant->getplantName();
-          // }
+          if (empty($Bed)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $bed = $garden->getbed();
+          }
           //Making he updates to the database.
           // $GardensObject->update_plant($plantID, $plantName);
-          // include('test.php');
-          header('Location: .?action=home');
+          include('test.php');
+          //header('Location: .?action=home');
           break;
       // This action will take the user to the update plant form page.
       case 'updatePlantFormPage':

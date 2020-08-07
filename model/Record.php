@@ -49,6 +49,7 @@
 
       $garden = new Gardens();
 
+      $garden->setBedID($row['bedID']);
       $garden->setbed($row['bed']);
       $garden->setplantID($row['plantID']);
       $garden->setlocation($row['location']);

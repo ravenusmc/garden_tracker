@@ -7,7 +7,7 @@
     public function __construct() {
        $this->bedID = 0;
        $this->bed = '';
-       $this->plantID = '';
+       $this->plantID = 0;
        $this->location = '';
        $this->timePeriod = '';
        $this->plantDate = '';

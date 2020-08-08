@@ -18,6 +18,10 @@ form {
   border-radius: 12px;
 }
 
+.errorMessage {
+  color: white;
+}
+
 input {
   margin: 5px;
 }

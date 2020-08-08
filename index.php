@@ -57,15 +57,17 @@
 
 <main>
 
-  <!-- Start of error handling -->
-  <?php
-    if (isset($message)){
-      echo $message;
-    }
-  ?>
-  <!-- End of error handling -->
-
   <form method="post" class='form'>
+
+    <!-- Start of error handling -->
+    <div class='errorMessage'>
+      <?php
+        if (isset($message)){
+          echo $message;
+        }
+      ?>
+    </div>
+    <!-- End of error handling -->
 
     <div class='form-item'>
       <input name='username' type='text' class='form-input' placeholder="Username" aria-label="Username">

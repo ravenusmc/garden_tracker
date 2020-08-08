@@ -79,6 +79,30 @@
             $garden = $GardensObject->getOneRecord($bedID);
             $bed = $garden->getbed();
           }
+          if (empty($plantID)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $plantID = $garden->getplantID();
+          }
+          if (empty($location)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $location = $garden->getlocation();
+          }
+          if (empty($timePeriod)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $timePeriod = $garden->gettimePeriod();
+          }
+          if (empty($plantDate)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $plantDate = $garden->getplantDate();
+          }
+          if (empty($firstPickDate)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $firstPickDate = $garden->getfirstPickDate();
+          }
+          if (empty($lastPickDate)) {
+            $garden = $GardensObject->getOneRecord($bedID);
+            $lastPickDate = $garden->getlastPickDate();
+          }
           //Making he updates to the database.
           // $GardensObject->update_plant($plantID, $plantName);
           include('test.php');

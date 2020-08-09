@@ -104,7 +104,7 @@
             $lastPickDate = $garden->getlastPickDate();
           }
           //Making he updates to the database.
-          // $GardensObject->update_plant($plantID, $plantName);
+          $GardensObject->updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate);
           include('test.php');
           //header('Location: .?action=home');
           break;

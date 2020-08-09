@@ -17,7 +17,7 @@
   <form action="index.php" method="post">
 
     <input type="hidden" name="action" value="updateRecordFormSubmit" />
-    <input  name='bedID' value='<?php echo $garden->getBedID(); ?>'>
+    <input type="hidden"  name='bedID' value='<?php echo $garden->getBedID(); ?>'>
     <label>Bed: </label><input name='Bed' placeholder='<?php echo $garden->getbed(); ?>'><br>
     <label>plantID: </label><input name='plantID' placeholder='<?php echo $garden->getplantID(); ?>'><br>
     <label>Location: </label><input name='location' placeholder='<?php echo $garden->getlocation(); ?>'><br>

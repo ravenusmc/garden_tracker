@@ -126,6 +126,31 @@
 
     } // End addPlant Method
 
+    // This method will update a record from the DB based on the bed id
+    public static function updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {
+
+      $db = Database::getDB();
+
+      $query = 'UPDATE Garden_Beds
+      SET bedID = :bedID, Bed = :Bed, plantID = :plantID, location = :location,
+      timePeriod = :timePeriod, plantDate = :plantDate, firstPickDate = :firstPickDate
+      lastPickDate = :lastPickDate
+      WHERE bedID = :bedID';
+
+      $statement = $db->prepare($query);
+      $statement->bindValue(':$bedID', $bedID);
+      $statement->bindValue(':Bed', $Bed);
+      $statement->bindValue(':plantID', $plantID);
+      $statement->bindValue(':location', $location);
+      $statement->bindValue(':timePeriod', $timePeriod);
+      $statement->bindValue(':plantDate', $plantDate);
+      $statement->bindValue(':firstPickDate', $firstPickDate);
+      $statement->bindValue(':lastPickDate', $lastPickDate);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End update_plant Method
+
     // This method will update a plant record from the DB based on the plant id.
     public static function update_plant($plantID, $plantName) {
 

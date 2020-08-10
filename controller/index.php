@@ -105,8 +105,8 @@
           }
           //Making he updates to the database.
           $GardensObject->updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate);
-          include('test.php');
-          //header('Location: .?action=home');
+          //include('test.php');
+          header('Location: .?action=home');
           break;
       // This action will take the user to the update plant form page.
       case 'updatePlantFormPage':

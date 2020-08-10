@@ -2,7 +2,7 @@
 
   //This file will connect to the MySQL database
   class Database {
-    
+
     private static $dsn = 'mysql:host=localhost;dbname=Garden_Tracker';
     private static $username = 'root';
     private static $password = 'root';
@@ -21,6 +21,7 @@
         }catch (PDOException $e) {
           //echo 'failed';
           $error_message = $e->getMessage();
+          echo $error_message;
           exit();
         }
 

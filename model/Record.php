@@ -128,18 +128,22 @@
 
     // This method will update a record from the DB based on the bed id
     public static function updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {
-
+      echo $bedID . ' ' . $Bed;
       $db = Database::getDB();
 
       $query = 'UPDATE Garden_Beds
-      SET bedID = :bedID, Bed = :Bed, plantID = :plantID, location = :location,
-      timePeriod = :timePeriod, plantDate = :plantDate, firstPickDate = :firstPickDate
+      SET bed = :bed,
+      plantID = :plantID,
+      location = :location,
+      timePeriod = :timePeriod,
+      plantDate = :plantDate,
+      firstPickDate = :firstPickDate,
       lastPickDate = :lastPickDate
       WHERE bedID = :bedID';
 
       $statement = $db->prepare($query);
-      $statement->bindValue(':$bedID', $bedID);
-      $statement->bindValue(':Bed', $Bed);
+      $statement->bindValue(':bedID', $bedID);
+      $statement->bindValue(':bed', $Bed);
       $statement->bindValue(':plantID', $plantID);
       $statement->bindValue(':location', $location);
       $statement->bindValue(':timePeriod', $timePeriod);

@@ -37,6 +37,16 @@
       case 'CreateRecord':
         include('CreateRecord.php');
         break;
+      case 'CreateRecordSubmit':
+        $Bed = filter_input(INPUT_POST, 'bed');
+        $plantID = filter_input(INPUT_POST, 'plantID');
+        $location = filter_input(INPUT_POST, 'location');
+        $timePeriod = filter_input(INPUT_POST, 'timePeriod');
+        $plantDate = filter_input(INPUT_POST, 'plantDate');
+        $firstPickDate = filter_input(INPUT_POST, 'firstPickDate');
+        $lastPickDate = filter_input(INPUT_POST, 'lastPickDate');
+        include('test.php');
+        break;
       // This action will take the user to the create a plant page
       case 'createPlantPage':
         include('CreatePlant.php');
@@ -105,7 +115,6 @@
           }
           //Making he updates to the database.
           $GardensObject->updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate);
-          //include('test.php');
           header('Location: .?action=home');
           break;
       // This action will take the user to the update plant form page.

@@ -15,7 +15,7 @@
   <h1>Create Record</h1>
 
   <form action="index.php" method="post">
-    <input type="hidden" name="action" value="createRecord" />
+    <input type="hidden" name="action" value="CreateRecordSubmit" />
 
     <input placeholder='Bed' type='text' name='bed'>
     <input placeholder='plant' type='text' name='plant'>

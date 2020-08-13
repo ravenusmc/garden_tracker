@@ -9,6 +9,7 @@
   }
 
 ?>
+<?php include '../view/header.php'; ?>
 <h1>Update Page</h1>
 
 <main>

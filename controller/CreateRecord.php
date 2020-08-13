@@ -9,25 +9,37 @@
   }
 
 ?>
+<!-- Header files -->
 <?php include '../view/header.php'; ?>
+<!-- Bringing in generic CSS -->
+<link rel="stylesheet" type="text/css" href="../assets/css/generic.css">
+<!-- Bringing in CSS designed for this page -->
+<link rel="stylesheet" type="text/css" href="../assets/css/createRecord.css">
 
 <main>
 
-  <h1>Create Record</h1>
+  <section class='formSection'>
 
-  <form action="index.php" method="post">
-    <input type="hidden" name="action" value="CreateRecordSubmit" />
+    <h1>Create A Record</h1>
 
-    <input placeholder='Bed' type='text' name='bed'>
-    <input placeholder='plant' type='text' name='plant'>
-    <input placeholder='Location' type='text' name='location'>
-    <input placeholder='Time Period' type='text' name='time_period'>
-    <input placeholder='Plant Date' type='text' name='plant_date'>
-    <input placeholder='First Pick Date' type='text' name='first_pick_date'>
-    <input placeholder='Last Pick Date' type='text' name='last_pick_date'>
+    <form action="index.php" method="post">
+      <input type="hidden" name="action" value="CreateRecordSubmit" />
 
-    <button>Submit</button>
+      <input placeholder='Bed' type='text' name='bed'>
+      <input placeholder='plant' type='text' name='plant'>
+      <input placeholder='Location' type='text' name='location'>
+      <input placeholder='Time Period' type='text' name='time_period'>
+      <input placeholder='Plant Date' type='text' name='plant_date'>
+      <input placeholder='First Pick Date' type='text' name='first_pick_date'>
+      <input placeholder='Last Pick Date' type='text' name='last_pick_date'>
 
-  </form>
+      <button>Submit</button>
+
+    </form>
+
+  </section>
+
+  <section class='imageSection'>
+  </section>
 
 </main>

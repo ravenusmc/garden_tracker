@@ -25,20 +25,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link font" href="?action=home_page">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link font" href="?action=home">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link font" href="?action=resume">Resume</a>
+          <a class="nav-link font" href="?action=CreateRecord">Add Record</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle font" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pages
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item font" href="?action=home">Home</a>
-            <a class="dropdown-item font" href="?action=CreateRecord">Add Record</a>
-            <a class='dropdown-item font' href="?action=createPlantPage">Add Plant</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link font" href="?action=createPlantPage">Add Plant</a>
         </li>
       </ul>
     </div>

@@ -4,7 +4,9 @@ CSS in this file will be for the create record page
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2em;
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .formSection {
@@ -12,14 +14,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
 }
 
 form {
+  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+input {
+  margin-top: 10px;
 }
 
 .imageSection {

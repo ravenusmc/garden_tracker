@@ -30,13 +30,17 @@
       <input placeholder='Location' type='text' name='location'>
       <input placeholder='Time Period' type='text' name='time_period'>
       <input placeholder='Plant Date' type='text' name='plant_date'>
-      <select name='year_from'>
-          <option value='2018'>2018</option>
-          <option value='2019'>2019</option>
+      <select name='plantDateYear'>
           <option value='2020'>2020</option>
+          <option value='2021'>2021</option>
+          <option value='2022'>2022</option>
+          <option value='2023'>2023</option>
+          <option value='2024'>2024</option>
+          <option value='2025'>2025</option>
+          <option value='2026'>2026</option>
         </select>
 
-        <select name='month_from'>
+        <select name='plantDateMonth'>
           <option value='01'>Jan</option>
           <option value='02'>Feb</option>
           <option value='03'>Mar</option>
@@ -51,7 +55,7 @@
           <option value='12'>Dec</option>
         </select>
 
-        <select name='day_from'>
+        <select name='plantDateDay'>
           <option value='01'>1</option>
           <option value='02'>2</option>
           <option value='03'>3</option>

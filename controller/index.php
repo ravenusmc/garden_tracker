@@ -42,9 +42,23 @@
         $plantID = filter_input(INPUT_POST, 'plantID');
         $location = filter_input(INPUT_POST, 'location');
         $timePeriod = filter_input(INPUT_POST, 'timePeriod');
-        $plantDate = filter_input(INPUT_POST, 'plantDate');
-        $firstPickDate = filter_input(INPUT_POST, 'firstPickDate');
-        $lastPickDate = filter_input(INPUT_POST, 'lastPickDate');
+        $plantDateYear = filter_input(INPUT_POST, 'plantDateYear');
+        $plantDateMonth = filter_input(INPUT_POST, 'plantDateMonth');
+        $plantDateDay = filter_input(INPUT_POST, 'plantDateDay');
+
+        // $plantDate = filter_input(INPUT_POST, 'plantDate');
+        // $firstPickDate = filter_input(INPUT_POST, 'firstPickDate');
+        // $lastPickDate = filter_input(INPUT_POST, 'lastPickDate');
+
+        // Creating the date time stamps
+        $plantDate = $plantDateYear . '-' . $plantDateMonth . '-' . $plantDateDay;
+        // $plantDate = new DateTime($plantDate);
+        //$plantDate = new DateTime($plantDate);
+
+        // $plantDate2 = date_create_from_format("j-M-Y", $plantDate);
+        // echo date_format($plantDate2, "Y/m/d");
+        //echo $plantDate;
+
         include('test.php');
         break;
       // This action will take the user to the create a plant page

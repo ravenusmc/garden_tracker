@@ -110,6 +110,28 @@
 
     } // End getOnePlant Method
 
+    // This method will Add a record to the Garden Beds table
+    public static function addRecord($bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {
+
+      $db = Database::getDB();
+
+      $query = 'INSERT INTO Garden_Beds
+                (bed, plantID, location, timePeriod, plantDate, firstPickDate, lastPickDate)
+                VALUES
+                (:bed, :plantID, :location, :timePeriod, :plantDate, :firstPickDate, :lastPickDate)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':bed', $bed);
+      $statement->bindValue(':plantID', $plantID);
+      $statement->bindValue(':location', $location);
+      $statement->bindValue(':timePeriod', $timePeriod);
+      $statement->bindValue(':plantDate', $plantDate);
+      $statement->bindValue(':firstPickDate', $firstPickDate);
+      $statement->bindValue(':lastPickDate', $lastPickDate);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End addRecord Method
+
     // This method will Add a plant to the plant table
     public static function addPlant($plant) {
 

@@ -38,26 +38,38 @@
         include('CreateRecord.php');
         break;
       case 'CreateRecordSubmit':
-        $Bed = filter_input(INPUT_POST, 'bed');
+        $bed = filter_input(INPUT_POST, 'bed');
         $plantID = filter_input(INPUT_POST, 'plantID');
         $location = filter_input(INPUT_POST, 'location');
         $timePeriod = filter_input(INPUT_POST, 'timePeriod');
+        // Values below will be for forming the date time stamps
         $plantDateYear = filter_input(INPUT_POST, 'plantDateYear');
         $plantDateMonth = filter_input(INPUT_POST, 'plantDateMonth');
         $plantDateDay = filter_input(INPUT_POST, 'plantDateDay');
+        $firstPickDateYear = filter_input(INPUT_POST, 'firstPickDateYear');
+        $firstPickDateMonth = filter_input(INPUT_POST, 'firstPickDateMonth');
+        $firstPlantDateDay = filter_input(INPUT_POST, 'firstPlantDateDay');
+        $lastPickDateYear = filter_input(INPUT_POST, 'firstPlantDateDay');
+        $lastPickDateMonth = filter_input(INPUT_POST, 'lastPickDateMonth');
+        $lastPickDateDay = filter_input(INPUT_POST, 'lastPickDateDay');
 
-        // $plantDate = filter_input(INPUT_POST, 'plantDate');
-        // $firstPickDate = filter_input(INPUT_POST, 'firstPickDate');
-        // $lastPickDate = filter_input(INPUT_POST, 'lastPickDate');
+        echo $timePeriod;
+
+        // Setting a generic time value
+        $time = '08:00:00';
 
         // Creating the date time stamps
-        $plantDate = $plantDateYear . '-' . $plantDateMonth . '-' . $plantDateDay;
-        // $plantDate = new DateTime($plantDate);
-        //$plantDate = new DateTime($plantDate);
+        $plantDate = $plantDateYear . '-' . $plantDateMonth . '-' . $plantDateDay . ' ' . $time;
+        $firstPickDate = $firstPickDateYear . '-' . $firstPickDateMonth . '-' . $firstPlantDateDay . ' ' . $time;
+        $lastPickDate = $lastPickDateYear . '-' . $lastPickDateMonth . '-' . $lastPickDateDay . ' ' . $time;
+        // $plantDate_DateTime = new DateTime($plantDate);
+        // echo $plantDate_DateTime;
+        echo $bed . ' ' . $plantID . ' ' . $location . ' ' . $timePeriod . ' ' . $plantDate . ' ' . $firstPickDate . ' ' . $lastPickDate;
 
-        // $plantDate2 = date_create_from_format("j-M-Y", $plantDate);
-        // echo date_format($plantDate2, "Y/m/d");
-        //echo $plantDate;
+        // Creating a gardens Object
+        $GardensObject = new GrowingDB();
+        #Calling the delete record method to delete the record.
+        $GardensObject->addRecord($bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate);
 
         include('test.php');
         break;

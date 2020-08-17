@@ -35,6 +35,9 @@
         include('home.php');
         break;
       case 'CreateRecord':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        $plants = $GardensObject->searchForPlants();
         include('CreateRecord.php');
         break;
       case 'CreateRecordSubmit':

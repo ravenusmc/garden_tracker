@@ -17,11 +17,10 @@ main {
 }
 
 form {
-  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 input {

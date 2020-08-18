@@ -32,14 +32,17 @@
         // Searching in the database for the garden records
         $gardens = $GardensObject->searchForRecords();
         $plants = $GardensObject->searchForPlants();
+
         include('home.php');
         break;
+      // This action will take the user to the create a record page
       case 'CreateRecord':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();
         $plants = $GardensObject->searchForPlants();
         include('CreateRecord.php');
         break;
+      // This action will actually create a record
       case 'CreateRecordSubmit':
         $bed = filter_input(INPUT_POST, 'bed');
         $plantID = filter_input(INPUT_POST, 'plantID');
@@ -56,8 +59,6 @@
         $lastPickDateMonth = filter_input(INPUT_POST, 'lastPickDateMonth');
         $lastPickDateDay = filter_input(INPUT_POST, 'lastPickDateDay');
 
-        echo $timePeriod;
-
         // Setting a generic time value
         $time = '08:00:00';
 
@@ -65,16 +66,13 @@
         $plantDate = $plantDateYear . '-' . $plantDateMonth . '-' . $plantDateDay . ' ' . $time;
         $firstPickDate = $firstPickDateYear . '-' . $firstPickDateMonth . '-' . $firstPlantDateDay . ' ' . $time;
         $lastPickDate = $lastPickDateYear . '-' . $lastPickDateMonth . '-' . $lastPickDateDay . ' ' . $time;
-        // $plantDate_DateTime = new DateTime($plantDate);
-        // echo $plantDate_DateTime;
-        echo $bed . ' ' . $plantID . ' ' . $location . ' ' . $timePeriod . ' ' . $plantDate . ' ' . $firstPickDate . ' ' . $lastPickDate;
 
         // Creating a gardens Object
         $GardensObject = new GrowingDB();
         #Calling the delete record method to delete the record.
         $GardensObject->addRecord($bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate);
 
-        include('test.php');
+        include('CreateRecord.php');
         break;
       // This action will take the user to the create a plant page
       case 'createPlantPage':

@@ -26,6 +26,9 @@ header {
 
 /* CSS For the control area */
 #controlArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 50px;
 }
 
@@ -53,4 +56,16 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #008640;
+}
+
+
+@media only all and (max-width: 900px){
+
+  #controlArea {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+
 }

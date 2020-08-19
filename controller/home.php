@@ -29,15 +29,31 @@
   </header>
 
   <section id='controlArea'>
-    <h2 class='center'>Control Area</h2>
-    <form action="index.php" method="post">
-      <input type="hidden" name="action" value="CreateRecord" />
-      <button>Create Record</button>
-    </form>
-    <form action="index.php" method="post">
-      <input type="hidden" name="action" value="createPlantPage" />
-      <button>Add Plant</button>
-    </form>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="../assets/images/record.jpg" alt="picture of a clipboard">
+      <div class="card-body">
+        <h5 class="card-title">Create a Record</h5>
+        <p class="card-text">Going to this page will allow the user to add a new garden record for a specific planting location.</p>
+        <form action="index.php" method="post">
+          <input type="hidden" name="action" value="CreateRecord" />
+          <button class="btn btn-primary">Create Record</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="../assets/images/green_beans.jpg" alt="green beans">
+      <div class="card-body">
+        <h5 class="card-title">Add a Plant</h5>
+        <p class="card-text">Going to this page will allow the user to add a new plant record for use in the record area.</p>
+        <form action="index.php" method="post">
+          <input type="hidden" name="action" value="createPlantPage" />
+          <button class="btn btn-primary">Add Plant</button>
+        </form>
+      </div>
+    </div>
+
   </section>
 
   <section id='tableArea'>

@@ -1,0 +1,26 @@
+/*********************
+CSS in this file will be for the create plant page
+**********************/
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3em;
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.formArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictureArea {
+  background-image: url('../images/threePlantsGrowing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}

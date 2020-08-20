@@ -192,6 +192,10 @@
         $GardensObject->deletePlant($plantID);
         header('Location: .?action=home');
         break;
+      // This action will take the user to the notes page
+      case 'notes':
+        include('notes.php');
+        break;
     }
   }else {
     include('notAllowed.php');

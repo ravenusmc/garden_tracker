@@ -33,6 +33,9 @@
         <li class="nav-item">
           <a class="nav-link font" href="?action=createPlantPage">Add Plant</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link font" href="?action=notes">Notes</a>
+        </li>
       </ul>
     </div>
   </nav>

@@ -58,77 +58,85 @@
 
   <section id='tableArea'>
 
-    <div>
+    <div class="table-responsive-sm">
       <h2 class='center'>Garden Table</h2>
-      <table>
-        <tr>
-          <th>Bed</th>
-          <th>PlantID</th>
-          <th>Location</th>
-          <th>Time Period</th>
-          <th>Plant Date</th>
-          <th>First Pick Date</th>
-          <th>Last Pick Date</th>
-          <th>Update Record</th>
-          <th>Delete Record</th>
-        </tr>
-        <?php foreach ($gardens as $garden): ?>
+      <table class="table table-bordered table-hover table-sm">
+        <thead class='thead-dark'>
           <tr>
-            <td><?php echo $garden->getbed(); ?></td>
-            <td><?php echo $garden->getplantID(); ?></td>
-            <td><?php echo $garden->getlocation(); ?></td>
-            <td><?php echo $garden->gettimePeriod(); ?></td>
-            <td><?php echo $garden->getplantDate(); ?></td>
-            <td><?php echo $garden->getfirstPickDate(); ?></td>
-            <td><?php echo $garden->getlastPickDate(); ?></td>
-            <td>
-              <form action="index.php" method="post">
-                <input type="hidden" name="action" value="updateRecordFormPage">
-                <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
-                <input class='input_style' type="submit" value="Update">
-              </form>
-            </td>
-            <td>
-              <form action="index.php" method="post">
-                <input type="hidden" name="action" value="delete_record">
-                <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
-                <input class='input_style' type="submit" value="Delete">
-              </form>
-            </td>
+            <th>Bed</th>
+            <th>PlantID</th>
+            <th>Location</th>
+            <th>Time Period</th>
+            <th>Plant Date</th>
+            <th>First Pick Date</th>
+            <th>Last Pick Date</th>
+            <th>Update Record</th>
+            <th>Delete Record</th>
           </tr>
-        <?php endforeach; ?>
+        </thead>
+        <tbody>
+          <?php foreach ($gardens as $garden): ?>
+            <tr>
+              <td><?php echo $garden->getbed(); ?></td>
+              <td><?php echo $garden->getplantID(); ?></td>
+              <td><?php echo $garden->getlocation(); ?></td>
+              <td><?php echo $garden->gettimePeriod(); ?></td>
+              <td><?php echo $garden->getplantDate(); ?></td>
+              <td><?php echo $garden->getfirstPickDate(); ?></td>
+              <td><?php echo $garden->getlastPickDate(); ?></td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="updateRecordFormPage">
+                  <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
+                  <input class='input_style' type="submit" value="Update">
+                </form>
+              </td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="delete_record">
+                  <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
+                  <input class='input_style' type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
       </table>
     </div>
 
-    <div>
-      <h2>Plant Table</h2>
-      <table>
-        <tr>
-          <th>Plant ID</th>
-          <th>Plant Name</th>
-          <th>Update Plant</th>
-          <th>Delete Plant</th>
-        </tr>
-        <?php foreach ($plants as $plant): ?>
+    <div class="table-responsive-sm">
+      <h2 class='center'>Plant Table</h2>
+      <table class="table table-bordered table-hover table-sm">
+        <thead class='thead-dark'>
           <tr>
-            <td><?php echo $plant->getplantID(); ?></td>
-            <td><?php echo $plant->getplantName(); ?></td>
-            <td>
-              <form action="index.php" method="post">
-                <input type="hidden" name="action" value="updatePlantFormPage">
-                <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
-                <input class='input_style' type="submit" value="Update">
-              </form>
-            </td>
-            <td>
-              <form action="index.php" method="post">
-                <input type="hidden" name="action" value="delete_plant">
-                <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
-                <input class='input_style' type="submit" value="Delete">
-              </form>
-            </td>
+            <th>Plant ID</th>
+            <th>Plant Name</th>
+            <th>Update Plant</th>
+            <th>Delete Plant</th>
           </tr>
-        <?php endforeach; ?>
+        </thead>
+        <tbody>
+          <?php foreach ($plants as $plant): ?>
+            <tr>
+              <td><?php echo $plant->getplantID(); ?></td>
+              <td><?php echo $plant->getplantName(); ?></td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="updatePlantFormPage">
+                  <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
+                  <input class='input_style' type="submit" value="Update">
+                </form>
+              </td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="delete_plant">
+                  <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
+                  <input class='input_style' type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
       </table>
     </div>
 

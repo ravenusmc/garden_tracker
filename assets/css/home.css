@@ -67,5 +67,11 @@ tr:nth-child(even) {
     margin-top: 50px;
   }
 
+  #tableArea {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 50px;
+  }
+
 
 }

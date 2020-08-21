@@ -37,7 +37,7 @@
         <p class="card-text">Going to this page will allow the user to add a new garden record for a specific planting location.</p>
         <form action="index.php" method="post">
           <input type="hidden" name="action" value="CreateRecord" />
-          <button class="btn btn-primary">Create Record</button>
+          <button class="btn btn-outline-primary">Create Record</button>
         </form>
       </div>
     </div>
@@ -49,7 +49,7 @@
         <p class="card-text">Going to this page will allow the user to add a new plant record for use in the record area.</p>
         <form action="index.php" method="post">
           <input type="hidden" name="action" value="createPlantPage" />
-          <button class="btn btn-primary">Add Plant</button>
+          <button class="btn btn-outline-primary">Add Plant</button>
         </form>
       </div>
     </div>
@@ -88,14 +88,14 @@
                 <form action="index.php" method="post">
                   <input type="hidden" name="action" value="updateRecordFormPage">
                   <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
-                  <input class='input_style' type="submit" value="Update">
+                  <input class='update' type="submit" value="Update">
                 </form>
               </td>
               <td>
                 <form action="index.php" method="post">
                   <input type="hidden" name="action" value="delete_record">
                   <input type="hidden" name="bedID" value="<?php echo $garden->getBedID(); ?>">
-                  <input class='input_style' type="submit" value="Delete">
+                  <input class='delete' type="submit" value="Delete">
                 </form>
               </td>
             </tr>
@@ -124,14 +124,14 @@
                 <form action="index.php" method="post">
                   <input type="hidden" name="action" value="updatePlantFormPage">
                   <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
-                  <input class='input_style' type="submit" value="Update">
+                  <input class='update' type="submit" value="Update">
                 </form>
               </td>
               <td>
                 <form action="index.php" method="post">
                   <input type="hidden" name="action" value="delete_plant">
                   <input type="hidden" name="plantID" value="<?php echo $plant->getplantID(); ?>">
-                  <input class='input_style' type="submit" value="Delete">
+                  <input class='delete' type="submit" value="Delete">
                 </form>
               </td>
             </tr>

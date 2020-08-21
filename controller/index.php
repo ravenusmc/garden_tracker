@@ -194,7 +194,13 @@
         break;
       // This action will take the user to the notes page
       case 'notes':
+        // echo date("Y-m-d");
         include('notes.php');
+        break;
+      case 'createNote':
+        $note = filter_input(INPUT_POST, 'note');
+        include('blank.php');
+        //include('notes.php');
         break;
     }
   }else {

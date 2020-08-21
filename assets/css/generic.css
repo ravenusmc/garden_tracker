@@ -20,3 +20,25 @@ button {
   background-color: #42E762;
   border-color: #42E762;
 }
+
+/*****************
+CSS For Inputs
+*****************/
+
+.update {
+  background-color: #F7F314;
+  border: 1px solid #F7F314;
+  color: #0BBB63;
+}
+
+.update:hover {
+  background-color: #0BBB63
+  border: 1px solid #0BBB63
+  color: #F7F314;
+}
+
+.delete {
+  background-color: #F51F43;
+  border: 1px solid #F51F43;
+  color: #0BBB63;
+}

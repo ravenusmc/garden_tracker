@@ -18,6 +18,13 @@
 
 <main>
   <h1>Notes</h1>
+
+  <form action="index.php" method="post">
+    <input type="hidden" name="action" value="createNote" />
+    <textarea name="note" rows="10" cols="50" placeholder='Type Note...' ></textarea>
+    <button>Submit</button>
+  </form>
+
 </main>
 
 <!-- Footer Area -->

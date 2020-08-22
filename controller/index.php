@@ -194,13 +194,17 @@
         break;
       // This action will take the user to the notes page
       case 'notes':
-        // echo date("Y-m-d");
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
         include('notes.php');
         break;
       case 'createNote':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
         $note = filter_input(INPUT_POST, 'note');
-        include('blank.php');
-        //include('notes.php');
+        $dateStamp = date("Y-m-d");
+        $GardensObject->addNote($note, $dateStamp);
+        include('notes.php');
         break;
     }
   }else {

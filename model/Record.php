@@ -148,6 +148,23 @@
 
     } // End addPlant Method
 
+    // This method will Add a note to the note table
+    public static function addNote($note, $dateStamp) {
+
+      $db = Database::getDB();
+
+      $query = 'INSERT INTO Notes
+                (note, dateStamp)
+                VALUES
+                (:note, :dateStamp)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':note', $note);
+      $statement->bindValue(':dateStamp', $dateStamp);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End addPlant Method
+
     // This method will update a record from the DB based on the bed id
     public static function updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {
       echo $bedID . ' ' . $Bed;

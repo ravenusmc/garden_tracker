@@ -26,11 +26,11 @@
           $this->note = $value;
     }
 
-    public function getDate() {
+    public function getDateStamp() {
          return $this->dateStamp;
     }
 
-    public function setDate($value) {
+    public function setDateStamp($value) {
           $this->dateStamp = $value;
     }
 

@@ -19,11 +19,50 @@
 <main>
   <h1>Notes</h1>
 
-  <form action="index.php" method="post">
-    <input type="hidden" name="action" value="createNote" />
-    <textarea name="note" rows="10" cols="50" placeholder='Type Note...' ></textarea>
-    <button>Submit</button>
-  </form>
+  <section id='formSection'>
+    <form action="index.php" method="post">
+      <input type="hidden" name="action" value="createNote" />
+      <textarea name="note" rows="10" cols="50" placeholder='Type Note...' ></textarea>
+      <button>Submit</button>
+    </form>
+  </section>
+
+  <section id='tableSection'>
+    <div class="table-responsive-sm">
+      <h2 class='center'>Notes Table</h2>
+      <table class="table table-bordered table-hover table-sm">
+        <thead class='thead-dark'>
+          <tr>
+            <th>Note</th>
+            <th>Date Written</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($notes as $note): ?>
+            <tr>
+              <td><?php echo $note->getNote(); ?></td>
+              <td><?php echo $note->getDateStamp(); ?></td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="updateNote">
+                  <input type="hidden" name="noteID" value="<?php echo $note->getNoteID(); ?>">
+                  <input class='update' type="submit" value="Update">
+                </form>
+              </td>
+              <td>
+                <form action="index.php" method="post">
+                  <input type="hidden" name="action" value="deleteNote">
+                  <input type="hidden" name="noteID" value="<?php echo $note->getNoteID(); ?>">
+                  <input class='delete' type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
 
 </main>
 

@@ -12,7 +12,9 @@
   require('../model/database.php');
   require('../model/Gardens.php');
   require('../model/Plants.php');
+  require('../model/notes.php');
   require('../model/Record.php');
+
 
   //Setting a default action
   $action = filter_input(INPUT_POST, 'action');
@@ -196,6 +198,8 @@
       case 'notes':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();
+        // Searching in the database for the garden records
+        $notes = $GardensObject->showNotes();
         include('notes.php');
         break;
       case 'createNote':

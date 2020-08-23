@@ -163,7 +163,33 @@
       $statement->execute();
       $statement->closeCursor();
 
-    } // End addPlant Method
+    } // End addNote Method
+
+    // This method will pull all the notes
+    public static function showNotes() {
+
+      $db = Database::getDB();
+
+      $query = 'SELECT * FROM Notes
+                ORDER BY dateStamp asc';
+      $statement = $db->prepare($query);
+      $statement->execute();
+      $rows = $statement->fetchAll();
+      $statement->closeCursor();
+
+      foreach ($rows as $row) {
+        $note = new Notes();
+        $note->setNoteID($row['noteID']);
+        $note->setNote($row['note']);
+        $note->setDateStamp($row['dateStamp']);
+
+        $notes[] = $note;
+      } // End foreach loop
+
+      // Returning the note data
+      return $notes;
+
+    } // End showNotes Method
 
     // This method will update a record from the DB based on the bed id
     public static function updateRecord($bedID, $Bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {

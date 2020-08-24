@@ -200,6 +200,7 @@
         $GardensObject = new GrowingDB();
         // Searching in the database for the garden records
         $notes = $GardensObject->showNotes();
+        //include('blank.php');
         include('notes.php');
         break;
       case 'createNote':
@@ -208,7 +209,14 @@
         $note = filter_input(INPUT_POST, 'note');
         $dateStamp = date("Y-m-d");
         $GardensObject->addNote($note, $dateStamp);
-        include('notes.php');
+        include('home.php');
+        break;
+      case 'deleteNote':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        $noteID = filter_input(INPUT_POST, 'noteID');
+        $GardensObject->deleteNote($noteID);
+        include('home.php');
         break;
     }
   }else {

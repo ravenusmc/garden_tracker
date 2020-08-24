@@ -265,6 +265,20 @@
 
     } // End deletePlant Method
 
+    // This method will delete a note
+    public static function deleteNote($noteID) {
+
+      $db = Database::getDB();
+
+      $query = 'DELETE FROM Notes
+                WHERE noteID = :noteID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':noteID', $noteID);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End deletePlant Method
+
   } // End Class
 
 ?>

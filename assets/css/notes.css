@@ -1,0 +1,24 @@
+/*********************
+CSS in this file will be for the note page
+**********************/
+header {
+  margin: 50px 0 30px 0;
+}
+
+#formSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tableSection {
+  margin: 50px 5% 50px 5%;
+}

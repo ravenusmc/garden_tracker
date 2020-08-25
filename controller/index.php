@@ -209,14 +209,21 @@
         $note = filter_input(INPUT_POST, 'note');
         $dateStamp = date("Y-m-d");
         $GardensObject->addNote($note, $dateStamp);
-        include('home.php');
+        header('Location: .?action=notes');
+        break;
+      case 'updateNote':
+        // Creating the object to deal with the database.
+        $GardensObject = new GrowingDB();
+        $noteID = filter_input(INPUT_POST, 'noteID');
+        $note = $GardensObject->getOneNote($noteID);
+        include('updateNoteForm.php');
         break;
       case 'deleteNote':
         // Creating the object to deal with the database.
         $GardensObject = new GrowingDB();
         $noteID = filter_input(INPUT_POST, 'noteID');
         $GardensObject->deleteNote($noteID);
-        include('home.php');
+        header('Location: .?action=notes');
         break;
     }
   }else {

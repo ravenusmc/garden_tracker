@@ -60,7 +60,7 @@
 
       return $garden;
 
-    } // End getOnePlant Method
+    } // End getOneRecord Method
 
     // This method will get the plants from the data base.
     public static function searchForPlants() {
@@ -109,6 +109,28 @@
       return $plant;
 
     } // End getOnePlant Method
+
+    // This method will get one note from the DB based on the note id.
+    public static function getOneNote($noteID) {
+
+      $db = Database::getDB();
+
+      $query = 'SELECT * FROM Notes
+                WHERE noteID = :noteID';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':noteID', $noteID);
+      $statement->execute();
+      $row = $statement->fetch();
+      $statement->closeCursor();
+
+      $note = new Notes();
+
+      $note->setNoteID($row['noteID']);
+      $note->setNote($row['note']);
+
+      return $note;
+
+    } // End getOneNote Method
 
     // This method will Add a record to the Garden Beds table
     public static function addRecord($bed, $plantID, $location, $timePeriod, $plantDate, $firstPickDate, $lastPickDate) {
@@ -171,7 +193,7 @@
       $db = Database::getDB();
 
       $query = 'SELECT * FROM Notes
-                ORDER BY dateStamp asc';
+                ORDER BY dateStamp desc';
       $statement = $db->prepare($query);
       $statement->execute();
       $rows = $statement->fetchAll();

@@ -30,3 +30,6 @@
   <!-- End Form for updating plant -->
 
 </main>
+
+<!-- Footer Area -->
+<?php include '../view/footer.php'; ?>

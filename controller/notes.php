@@ -17,13 +17,16 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/notes.css">
 
 <main>
-  <h1>Notes</h1>
+
+  <header>
+    <h1 class='center'>Notes</h1>
+  </header>
 
   <section id='formSection'>
     <form action="index.php" method="post">
       <input type="hidden" name="action" value="createNote" />
       <textarea name="note" rows="10" cols="50" placeholder='Type Note...' ></textarea>
-      <button>Submit</button>
+      <button class="btn btn-outline-success">Submit</button>
     </form>
   </section>
 
@@ -35,6 +38,8 @@
           <tr>
             <th>Note</th>
             <th>Date Written</th>
+            <th>Update Note</th>
+            <th>Delete Note</th>
           </tr>
         </thead>
         <tbody>

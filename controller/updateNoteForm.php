@@ -10,7 +10,16 @@
 
 ?>
 <?php include '../view/header.php'; ?>
-<h1>Update Note Page</h1>
+<!-- Bringing in Generic CSS -->
+<link rel="stylesheet" type="text/css" href="../assets/css/generic.css">
+<!-- CSS for the header -->
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
+<!-- CSS for this page -->
+<link rel="stylesheet" type="text/css" href="../assets/css/updateNoteForm.css">
+
+<header>
+  <h1 class='center'>Update Note</h1>
+</header>
 
 <main>
 

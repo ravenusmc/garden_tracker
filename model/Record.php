@@ -301,6 +301,23 @@
 
     } // End deletePlant Method
 
+    // This method will update a plant record from the DB based on the plant id.
+    public static function updateNote($noteID, $note) {
+
+      $db = Database::getDB();
+
+      $query = 'UPDATE Notes
+      SET note = :note
+      WHERE noteID = :noteID';
+
+      $statement = $db->prepare($query);
+      $statement->bindValue(':noteID', $noteID);
+      $statement->bindValue(':note', $note);
+      $statement->execute();
+      $statement->closeCursor();
+
+    } // End update_plant Method
+
   } // End Class
 
 ?>

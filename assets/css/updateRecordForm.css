@@ -1,0 +1,20 @@
+/*********************
+CSS in this file will be for the update record page
+**********************/
+
+header {
+  margin: 50px 0 30px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

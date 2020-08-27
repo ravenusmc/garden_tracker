@@ -10,7 +10,16 @@
 
 ?>
 <?php include '../view/header.php'; ?>
-<h1>Update Record Page</h1>
+<!-- Bringing in Generic CSS -->
+<link rel="stylesheet" type="text/css" href="../assets/css/generic.css">
+<!-- CSS for the header -->
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
+<!-- CSS for this page -->
+<link rel="stylesheet" type="text/css" href="../assets/css/updateRecordForm.css">
+
+<header>
+  <h1 class='center'>Update Record</h1>
+</header>
 
 <main>
 
@@ -27,11 +36,14 @@
     <label>First Pick Date: </label><input name='firstPickDate' placeholder='<?php echo $garden->getfirstPickDate(); ?>'><br>
     <label>Last Pick Date: </label><input name='lastPickDate' placeholder='<?php echo $garden->getlastPickDate(); ?>'><br>
 
-    <div>
-      <input type='submit' value="Submit Changes" />
-    <div>
+    <div class='buttonDiv'>
+      <button class="btn btn-outline-success">Submit</button>
+    </div>
 
   </form>
   <!-- End Form for updating plant -->
 
 </main>
+
+<!-- Footer Area -->
+<?php include '../view/footer.php'; ?>

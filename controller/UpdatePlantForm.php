@@ -10,7 +10,16 @@
 
 ?>
 <?php include '../view/header.php'; ?>
-<h1>Update Page</h1>
+<!-- Bringing in Generic CSS -->
+<link rel="stylesheet" type="text/css" href="../assets/css/generic.css">
+<!-- CSS for the header -->
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
+<!-- CSS for this page -->
+<link rel="stylesheet" type="text/css" href="../assets/css/updatePlantForm.css">
+
+<header>
+  <h1 class='center'>Update Plant</h1>
+</header>
 
 <main>
 
@@ -22,9 +31,9 @@
     <label>Plant Name: </label><input name='plantName' placeholder='<?php echo $plant->getplantName(); ?>'><br>
     <input type='hidden' name='plantID' value='<?php echo $plant->getplantID(); ?>'>
 
-    <div>
-      <input type='submit' value="Submit Changes" />
-    <div>
+    <div class='buttonDiv'>
+      <button class="btn btn-outline-success">Submit</button>
+    </div>
 
   </form>
   <!-- End Form for updating plant -->

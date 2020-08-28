@@ -28,7 +28,7 @@
 
     <input type="hidden" name="action" value="updatePlantFormSubmit" />
 
-    <label>Plant Name: </label><input name='plantName' placeholder='<?php echo $plant->getplantName(); ?>'><br>
+    <label>Plant Name: &nbsp; </label><input name='plantName' placeholder='<?php echo $plant->getplantName(); ?>'><br>
     <input type='hidden' name='plantID' value='<?php echo $plant->getplantID(); ?>'>
 
     <div class='buttonDiv'>

@@ -28,13 +28,13 @@
 
     <input type="hidden" name="action" value="updateRecordFormSubmit" />
     <input type="hidden"  name='bedID' value='<?php echo $garden->getBedID(); ?>'>
-    <label>Bed: </label><input name='Bed' placeholder='<?php echo $garden->getbed(); ?>'><br>
-    <label>plantID: </label><input name='plantID' placeholder='<?php echo $garden->getplantID(); ?>'><br>
-    <label>Location: </label><input name='location' placeholder='<?php echo $garden->getlocation(); ?>'><br>
-    <label>Time Period: </label><input name='timePeriod' placeholder='<?php echo $garden->gettimePeriod(); ?>'><br>
-    <label>Plant Date: </label><input name='plantDate' placeholder='<?php echo $garden->getplantDate(); ?>'><br>
-    <label>First Pick Date: </label><input name='firstPickDate' placeholder='<?php echo $garden->getfirstPickDate(); ?>'><br>
-    <label>Last Pick Date: </label><input name='lastPickDate' placeholder='<?php echo $garden->getlastPickDate(); ?>'><br>
+    <label>Bed: &nbsp;</label><input name='Bed' placeholder='<?php echo $garden->getbed(); ?>'><br>
+    <label>plantID: &nbsp;</label><input name='plantID' placeholder='<?php echo $garden->getplantID(); ?>'><br>
+    <label>Location: &nbsp;</label><input name='location' placeholder='<?php echo $garden->getlocation(); ?>'><br>
+    <label>Time Period: &nbsp;</label><input name='timePeriod' placeholder='<?php echo $garden->gettimePeriod(); ?>'><br>
+    <label>Plant Date: &nbsp;</label><input name='plantDate' placeholder='<?php echo $garden->getplantDate(); ?>'><br>
+    <label>First Pick Date: &nbsp;</label><input name='firstPickDate' placeholder='<?php echo $garden->getfirstPickDate(); ?>'><br>
+    <label>Last Pick Date: &nbsp;</label><input name='lastPickDate' placeholder='<?php echo $garden->getlastPickDate(); ?>'><br>
 
     <div class='buttonDiv'>
       <button class="btn btn-outline-success">Submit</button>
